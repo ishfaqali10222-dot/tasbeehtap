@@ -606,7 +606,7 @@ export default function Home() {
           )}
         </section>
 
-        <footer className="<div>
+        <footer 
   <div className="text-lg font-bold text-white">TasbeehTap</div>
   <p className="mt-2 max-w-xl">
     A simple, beautiful, distraction-free Islamic digital tasbeeh
