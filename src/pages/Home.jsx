@@ -607,54 +607,57 @@ export default function Home() {
         </section>
 
         <footer 
-  <div className="text-lg font-bold text-white">TasbeehTap</div>
-  <p className="mt-2 max-w-xl">
-    A simple, beautiful, distraction-free Islamic digital tasbeeh
-    counter made for daily remembrance.
-  </p>
-  <p className="mt-3 text-sm text-white/60">
-    Built with care for the Muslim Ummah
-  </p>
-  <p className="mt-1 text-sm text-white/60">
-    Contact: ishfaqali10222@gmail.com
-  </p>
-  <p className="mt-1 text-sm text-white/50">
-    © 2026 TasbeehTap. All rights reserved.
-  </p>
-</div>
+ <footer className="mt-8 grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm text-white/65 shadow-2xl backdrop-blur-xl md:grid-cols-2 md:items-center">
+  <div>
+    <div className="text-lg font-bold text-white">TasbeehTap</div>
+    <p className="mt-2 max-w-xl">
+      A simple, beautiful, distraction-free Islamic digital tasbeeh
+      counter made for daily remembrance.
+    </p>
+    <p className="mt-3 text-sm text-white/60">
+      Built with care for the Muslim Ummah
+    </p>
+    <p className="mt-1 text-sm text-white/60">
+      Contact: ishfaqali10222@gmail.com
+    </p>
+    <p className="mt-1 text-sm text-white/50">
+      © 2026 TasbeehTap. All rights reserved.
+    </p>
+  </div>
 
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Link
-              to="/about"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-            >
-              About
-            </Link>
-            <Link
-              to="/privacy-policy"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-            >
-              Contact
-            </Link>
-            <Link
-              to="/disclaimer"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-            >
-              Disclaimer
-            </Link>
-            <Link
-              to="/terms"
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-            >
-              Terms
-            </Link>
-          </div>
+  <div className="flex flex-wrap gap-3 md:justify-end">
+    <Link
+      to="/about"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+    >
+      About
+    </Link>
+    <Link
+      to="/privacy-policy"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+    >
+      Privacy Policy
+    </Link>
+    <Link
+      to="/contact"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+    >
+      Contact
+    </Link>
+    <Link
+      to="/disclaimer"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+    >
+      Disclaimer
+    </Link>
+    <Link
+      to="/terms"
+      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+    >
+      Terms
+    </Link>
+  </div>
+
         </footer>
       </div>
     </div>
