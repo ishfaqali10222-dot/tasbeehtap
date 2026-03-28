@@ -619,6 +619,67 @@ export default function Home() {
     </p>
     <p className="mt-1 text-sm text-white/60">
       Contact: ishfaqali10222@gmail.com
+<section className="mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
+  <div className="mb-4 flex items-center justify-between gap-3">
+    <div>
+      <div className="text-sm font-semibold text-emerald-100/85">
+        Saved History
+      </div>
+      <p className="mt-1 text-sm text-white/55">
+        Your latest tasbeeh sessions are stored on this device.
+      </p>
+    </div>
+    {history.length > 0 && (
+      <button
+        onClick={() => setHistory([])}
+        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10"
+      >
+        Clear History
+      </button>
+    )}
+  </div>
+
+  {history.length === 0 ? (
+    <div className="rounded-3xl border border-dashed border-white/10 bg-black/10 p-8 text-center text-white/55">
+      No saved sessions yet. Start counting and save your first zikr
+      session.
+    </div>
+  ) : (
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {history.map((item) => (
+        <div
+          key={item.id}
+          className="rounded-3xl border border-white/10 bg-black/15 p-5"
+        >
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h4 className="text-lg font-bold">{item.zikr}</h4>
+              <p className="mt-1 text-sm text-white/55">
+                {formatDateTime(item.date)}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-emerald-300/20 bg-emerald-500/10 px-4 py-2 text-xl font-bold text-emerald-100">
+              {item.count}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</section>
+
+<footer className="mt-8 grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm text-white/65 shadow-2xl backdrop-blur-xl md:grid-cols-2 md:items-center">
+  <div>
+    <div className="text-lg font-bold text-white">TasbeehTap</div>
+    <p className="mt-2 max-w-xl">
+      A simple, beautiful, distraction-free Islamic digital tasbeeh
+      counter made for daily remembrance.
+    </p>
+    <p className="mt-3 text-sm text-white/60">
+      Built with care for the Muslim Ummah
+    </p>
+    <p className="mt-1 text-sm text-white/60">
+      Contact: ishfaqali10222@gmail.com
     </p>
     <p className="mt-1 text-sm text-white/50">
       © 2026 TasbeehTap. All rights reserved.
@@ -657,9 +718,8 @@ export default function Home() {
       Terms
     </Link>
   </div>
-
-        </footer>
+</footer>
       </div>
     </div>
   );
-}
+   }
