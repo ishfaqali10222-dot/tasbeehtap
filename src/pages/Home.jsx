@@ -271,10 +271,13 @@ export default function Home() {
     setCount(newCount);
     setTodayTotal(newToday);
     if (newToday > bestDay) setBestDay(newToday);
+
     if (vibrateOn && typeof navigator !== "undefined" && navigator.vibrate) {
       navigator.vibrate(20);
     }
+
     playTapSound();
+
     if (goal > 0 && newCount === goal) {
       setShowCelebration(true);
       setTimeout(() => setShowCelebration(false), 2200);
@@ -285,12 +288,14 @@ export default function Home() {
 
   const handleSave = () => {
     if (count === 0) return;
+
     const entry = {
       id: Date.now(),
       zikr: selectedZikr,
       count,
       date: new Date().toISOString(),
     };
+
     setHistory([entry, ...history].slice(0, 20));
     setCount(0);
   };
@@ -455,7 +460,9 @@ export default function Home() {
                 />
               </div>
             </div>
-          </motion.div><div className="space-y-6">
+          </motion.div>
+
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -606,120 +613,58 @@ export default function Home() {
           )}
         </section>
 
-        <footer 
- <footer className="mt-8 grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm text-white/65 shadow-2xl backdrop-blur-xl md:grid-cols-2 md:items-center">
-  <div>
-    <div className="text-lg font-bold text-white">TasbeehTap</div>
-    <p className="mt-2 max-w-xl">
-      A simple, beautiful, distraction-free Islamic digital tasbeeh
-      counter made for daily remembrance.
-    </p>
-    <p className="mt-3 text-sm text-white/60">
-      Built with care for the Muslim Ummah
-    </p>
-    <p className="mt-1 text-sm text-white/60">
-      Contact: ishfaqali10222@gmail.com
-<section className="mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
-  <div className="mb-4 flex items-center justify-between gap-3">
-    <div>
-      <div className="text-sm font-semibold text-emerald-100/85">
-        Saved History
-      </div>
-      <p className="mt-1 text-sm text-white/55">
-        Your latest tasbeeh sessions are stored on this device.
-      </p>
-    </div>
-    {history.length > 0 && (
-      <button
-        onClick={() => setHistory([])}
-        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10"
-      >
-        Clear History
-      </button>
-    )}
-  </div>
-
-  {history.length === 0 ? (
-    <div className="rounded-3xl border border-dashed border-white/10 bg-black/10 p-8 text-center text-white/55">
-      No saved sessions yet. Start counting and save your first zikr
-      session.
-    </div>
-  ) : (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {history.map((item) => (
-        <div
-          key={item.id}
-          className="rounded-3xl border border-white/10 bg-black/15 p-5"
-        >
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h4 className="text-lg font-bold">{item.zikr}</h4>
-              <p className="mt-1 text-sm text-white/55">
-                {formatDateTime(item.date)}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-emerald-300/20 bg-emerald-500/10 px-4 py-2 text-xl font-bold text-emerald-100">
-              {item.count}
-            </div>
+        <footer className="mt-8 grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm text-white/65 shadow-2xl backdrop-blur-xl md:grid-cols-2 md:items-center">
+          <div>
+            <div className="text-lg font-bold text-white">TasbeehTap</div>
+            <p className="mt-2 max-w-xl">
+              A simple, beautiful, distraction-free Islamic digital tasbeeh
+              counter made for daily remembrance.
+            </p>
+            <p className="mt-3 text-sm text-white/60">
+              Built with care for the Muslim Ummah
+            </p>
+            <p className="mt-1 text-sm text-white/60">
+              Contact: ishfaqali10222@gmail.com
+            </p>
+            <p className="mt-1 text-sm text-white/50">
+              © 2026 TasbeehTap. All rights reserved.
+            </p>
           </div>
-        </div>
-      ))}
-    </div>
-  )}
-</section>
 
-<footer className="mt-8 grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm text-white/65 shadow-2xl backdrop-blur-xl md:grid-cols-2 md:items-center">
-  <div>
-    <div className="text-lg font-bold text-white">TasbeehTap</div>
-    <p className="mt-2 max-w-xl">
-      A simple, beautiful, distraction-free Islamic digital tasbeeh
-      counter made for daily remembrance.
-    </p>
-    <p className="mt-3 text-sm text-white/60">
-      Built with care for the Muslim Ummah
-    </p>
-    <p className="mt-1 text-sm text-white/60">
-      Contact: ishfaqali10222@gmail.com
-    </p>
-    <p className="mt-1 text-sm text-white/50">
-      © 2026 TasbeehTap. All rights reserved.
-    </p>
-  </div>
-
-  <div className="flex flex-wrap gap-3 md:justify-end">
-    <Link
-      to="/about"
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-    >
-      About
-    </Link>
-    <Link
-      to="/privacy-policy"
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-    >
-      Privacy Policy
-    </Link>
-    <Link
-      to="/contact"
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-    >
-      Contact
-    </Link>
-    <Link
-      to="/disclaimer"
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-    >
-      Disclaimer
-    </Link>
-    <Link
-      to="/terms"
-      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
-    >
-      Terms
-    </Link>
-  </div>
-</footer>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <Link
+              to="/about"
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+            >
+              About
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+            >
+              Contact
+            </Link>
+            <Link
+              to="/disclaimer"
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+            >
+              Disclaimer
+            </Link>
+            <Link
+              to="/terms"
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:bg-white/10"
+            >
+              Terms
+            </Link>
+          </div>
+        </footer>
       </div>
     </div>
   );
-   }
+}
